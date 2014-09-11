@@ -1,0 +1,52 @@
+{
+	"Name":"CapitalModel",
+	"Directory":"business.model",
+	"Count_of_model_cicle":"1000",
+	"Start_capital":"5000000",
+	"Max_income":"100000",
+	"Min_income":"100",
+	"Max_payment":"1000000",
+	"Min_payment":"1000",
+	"Capital_streams": [
+	{
+		"Name":"CapitalStream",
+		"Income":true,
+		"Business_process_name":"Income Stream",
+		"Directory":"business.model.capital",
+		"Amount": 
+		{
+			"Name":"RandomNormalValue",
+			"Directory":"math.random",
+			"Alpha":"1000",
+			"Sigma":"250"
+		},
+		
+		"Process": 
+		{
+			"Name":"PoissonProcess",
+			"Directory":"math.process",
+			"Lambda":"25"
+		}
+	},
+	{
+		"Name":"CapitalStream",
+		"Income":false,
+		"Business_process_name":"Payment Stream",
+		"Directory":"business.model.capital",
+		"Amount": 
+		{
+			"Name":"RandomNormalValue",
+			"Directory":"math.random",
+			"Alpha":"10000",
+			"Sigma":"2500",
+		},
+		
+		"Process": 
+		{
+			"Name":"PoissonProcess",
+			"Directory":"math.process",
+			"Lambda":"7",
+		}
+	}
+	]
+}
