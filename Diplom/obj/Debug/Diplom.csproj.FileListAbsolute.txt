@@ -14,3 +14,11 @@ C:\Users\anizhegorodtsev\Documents\Visual Studio 2013\Projects\Diplom\Diplom\obj
 C:\Users\anizhegorodtsev\Documents\Visual Studio 2013\Projects\Diplom\Diplom\obj\Debug\Diplom.csprojResolveAssemblyReference.cache
 C:\Users\anizhegorodtsev\Documents\Visual Studio 2013\Projects\Diplom\Diplom\obj\Debug\GUI\MainWindow.baml
 C:\Users\anizhegorodtsev\Documents\Visual Studio 2013\Projects\Diplom\Diplom\obj\Debug\GUI\MainWindow.g.cs
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\GUI\MainWindow.baml
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\GUI\MainWindow.g.cs
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\App.g.cs
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom_MarkupCompile.cache
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.g.resources
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.Properties.Resources.resources
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.csproj.GenerateResource.Cache
+C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\bin\Debug\Diplom.exe.config
