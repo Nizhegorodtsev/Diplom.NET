@@ -30,3 +30,4 @@ C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\bin\Debug\Newtonsoft.Json.x
 C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.csprojResolveAssemblyReference.cache
 C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.exe
 C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.pdb
+C:\Users\Aleksandr\Documents\Diplom.NET\Diplom\bin\Debug\Diplom.exe.config
