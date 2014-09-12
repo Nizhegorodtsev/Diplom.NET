@@ -18,52 +18,52 @@ namespace Diplom.Data.Process
         /// <summary>
         /// Текущее состояние
         /// </summary>
-        private int currentState = 0;
+        protected int currentState = 0;
 
         /// <summary>
         /// Число различных состояний
         /// </summary>
-        private int countOfStates = 1;
+        protected int countOfStates = 1;
 
         /// <summary>
         /// Фиксируется время пребывания в каждом состоянии
         /// </summary>
-        private double[] timeInStateVector = null;
+        protected double[] timeInStateVector = null;
 
         /// <summary>
         /// Вектор частот наступления событий в каждом состоянии
         /// </summary>
-        private double[] occurrenceFrequencyVector = null;
+        protected double[] occurrenceFrequencyVector = null;
 
         /// <summary>
         /// Матрица вероятностей переходов переходов
         /// </summary>
-        private double[][] changeStateMatrix = null;
+        protected double[][] changeStateMatrix = null;
 
         /// <summary>
         /// Случайная величина отвечает за генерацию состояния, в которое перейдет поток при окончании времени пребывания в текущем состоянии
         /// </summary>
-        private RandomBasicValue stateSelector = null;
+        protected RandomBasicValue stateSelector = null;
 
         /// <summary>
         /// Вектор случайных величин, отвечающих за герерацию времени пребывания в состояниях. Каждая из случайных величин отвечает за генерацию времени пребывания в соответствующем состоянии
         /// </summary>
-        private List<RandomExponentialValue> timeInStateGenerator = null;
+        protected List<RandomExponentialValue> timeInStateGenerator = null;
 
         /// <summary>
         /// Вектор случайных величин, отвечающих за генерацию времени наступления события. Каждая случайная величина генерирует время время наступления событий для соответствующего состояния
         /// </summary>
-        private List<RandomExponentialValue> eventTimeGenerator = null;
+        protected List<RandomExponentialValue> eventTimeGenerator = null;
 
         /// <summary>
         /// Текущее время
         /// </summary>
-        private double currentTime = 0;
+        protected double currentTime = 0;
 
         /// <summary>
         /// Время, до которого поток будет пребывать в текущем состоянии
         /// </summary>
-        private double timeInCurrentState = 0;
+        protected double timeInCurrentState = 0;
 
         public static readonly String COUNT_OF_STATES = "Count_of_states";
 
@@ -91,9 +91,8 @@ namespace Diplom.Data.Process
                 currentTime = eventTime;
                 return eventTime;
             }
-            // Иначе текущее время полагается равным времени окончания пребывания потока в текущем состоянии
-            currentTime = timeInCurrentState;
-            // Происходит переход в новое состояние
+
+            //  Иначе происходит переход в новое состояние
             selectState();
             /// Рекурсивно вызывается метод nextValue(). Предполагается, что, в подавляющем большенстве случаев, выход из рекурсии 
             ///  будет происходить не более чем за 1 дополнительный вызов метода. Для этого необходимо, чтобы события наступали интенсивнее,
@@ -104,8 +103,10 @@ namespace Diplom.Data.Process
         /// <summary>
         /// Переход в новое состояние потока
         /// </summary>
-        private void selectState()
+        protected virtual void selectState()
         {
+            //текущее время полагается равным времени окончания пребывания потока в текущем состоянии 
+            currentTime = timeInCurrentState;
             currentState = -1;
             double[] pos = changeStateMatrix[currentState];
             double value = stateSelector.nextValue();
@@ -150,16 +151,30 @@ namespace Diplom.Data.Process
         {
             if (occurrenceFrequencyVector.Length != countOfStates)
                 throw new CreateModelException("Длина вектора частот наступления событий должна равняться числу состояний");
+
             if (timeInStateVector.Length != countOfStates)
                 throw new CreateModelException("Длина вектора \"продолжительности\" должна равняться числу состояний");
+
             if (changeStateMatrix.Length != countOfStates)
                 throw new CreateModelException("Матрица переходов должна быть размерностью " + countOfStates + "x" + countOfStates);
+
             for (int i = 0; i < countOfStates; i++)
             {
                 if (changeStateMatrix[i].Length != countOfStates)
                     throw new CreateModelException("Матрица переходов должна быть размерностью " + countOfStates + "x" + countOfStates);
+
                 if (changeStateMatrix[i][i] >= Utils.EPSILON)
                     throw new CreateModelException("Диагональные элементы матрицы переходов должны быть равны нулю");
+
+                double probability = 0;
+                for (int j = 0; j < countOfStates; j++)
+                {
+                    probability += changeStateMatrix[i][j];
+                    if (changeStateMatrix[i][j] > 1)
+                        throw new CreateModelException("changeStateEventMatrix[" + i + "] Сумма вероятностей перехода должна быть равно 1");
+                }
+                if (Math.Abs(probability - 1) > Utils.EPSILON)
+                    throw new CreateModelException("changeStateMatrix[" + i + "] Сумма вероятностей перехода должна быть равно 1");
             }
         }
     }

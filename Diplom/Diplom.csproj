@@ -94,9 +94,11 @@
     <Compile Include="Data\AbstractStorable.cs" />
     <Compile Include="Application\AppData.cs" />
     <Compile Include="Data\Exeption\CreateModelWarning.cs" />
+    <Compile Include="Data\Process\MAP.cs" />
+    <Compile Include="Data\Random\RandomBetaValue.cs" />
+    <Compile Include="Data\Random\RandomGammaValue.cs" />
     <Compile Include="Data\Utilities\JsonUtils.cs" />
     <Compile Include="Data\Process\MMPP.cs" />
-    <Compile Include="Data\Utilities\Matrix.cs" />
     <Compile Include="Data\Utilities\Utils.cs" />
     <Compile Include="Data\Process\AbstractProcess.cs" />
     <Compile Include="Data\Process\PoissonProcess.cs" />
