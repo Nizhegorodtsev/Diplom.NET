@@ -31,3 +31,17 @@ C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.csprojReso
 C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.exe
 C:\Users\anizhegorodtsev\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.pdb
 C:\Users\Aleksandr\Documents\Diplom.NET\Diplom\bin\Debug\Diplom.exe.config
+C:\Users\Alex\Documents\Diplom.NET\Diplom\bin\Debug\Diplom.exe.config
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\GUI\MainWindow.baml
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\GUI\MainWindow.g.cs
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\App.g.cs
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom_MarkupCompile.cache
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.g.resources
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.Properties.Resources.resources
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.csproj.GenerateResource.Cache
+C:\Users\Alex\Documents\Diplom.NET\Diplom\bin\Debug\Diplom.exe
+C:\Users\Alex\Documents\Diplom.NET\Diplom\bin\Debug\Diplom.pdb
+C:\Users\Alex\Documents\Diplom.NET\Diplom\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.exe
+C:\Users\Alex\Documents\Diplom.NET\Diplom\obj\Debug\Diplom.pdb

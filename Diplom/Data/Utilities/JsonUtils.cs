@@ -81,7 +81,7 @@ namespace Diplom.Data.Utilities
             int i = 0;
             foreach (JArray obj in array.Children<JArray>())
             {
-                matrix[i] = parseVector(obj);
+                matrix[i] = restoreVector(obj);
                 i++;
             }
             return matrix;

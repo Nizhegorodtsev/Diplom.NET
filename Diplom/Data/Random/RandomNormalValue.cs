@@ -19,7 +19,7 @@ namespace Diplom.Data.Random
         private RandomBasicValue brv2;
 
         private double alpha = 0;
-        private double sigma = 0;
+        private double sigma = 1;
 
         public static readonly String ALPHA = "Alpha";
         public static readonly String SIGMA = "Sigma";

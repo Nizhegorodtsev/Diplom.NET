@@ -19,9 +19,9 @@ namespace Diplom.Data.Random
 
         private List<Double> forIntegerGenerate = null;
 
-        public bool isIntegerType;
+        private bool isIntegerType;
 
-        public static readonly String ALPHA = "Alpha"; 
+        public static readonly String ALPHA = "Alpha";
 
         public static readonly String BETA = "Beta";
 
@@ -40,12 +40,12 @@ namespace Diplom.Data.Random
         private double nextInteger()
         {
             forIntegerGenerate.Clear();
-            Double x=0;
-            for (int i = 0; i < alpha + beta + 1; i++) 
+            Double x = 0;
+            for (int i = 0; i < alpha + beta + 1; i++)
             {
                 x = basicRandom.nextValue();
-                int j=0;
-                while (j < forIntegerGenerate.Count && x > forIntegerGenerate[j]) 
+                int j = 0;
+                while (j < forIntegerGenerate.Count && x > forIntegerGenerate[j])
                 {
                     j++;
                 }
@@ -59,15 +59,15 @@ namespace Diplom.Data.Random
 
         private double nextFractional()
         {
-
+            return 0;
         }
-        
+
         public override JObject store()
         {
-           JObject state=  base.store();
-           state.Add(ALPHA, alpha);
-           state.Add(BETA, beta);
-           return state;
+            JObject state = base.store();
+            state.Add(ALPHA, alpha);
+            state.Add(BETA, beta);
+            return state;
         }
 
         public override void restore(JObject state)
@@ -81,7 +81,11 @@ namespace Diplom.Data.Random
             if (alpha % 1 < Utils.EPSILON && beta % 1 < Utils.EPSILON)
                 isIntegerType = true;
             else
+            {
                 isIntegerType = false;
+                //TODO: доделать
+                throw new CreateModelException("Fractional not implemented");               
+            }
         }
 
         public override void validate()
