@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Diplom.Data.Exeption
 {
     /// <summary>
-    /// Ошибка при восстановлении сущности из сохраненного JSON объекта
+    /// Ошибка при создании модели
     /// </summary>
     class CreateModelException : Exception
     {

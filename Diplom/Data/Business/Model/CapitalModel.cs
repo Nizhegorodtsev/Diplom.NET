@@ -7,6 +7,7 @@ using System.Collections;
 using Newtonsoft.Json.Linq;
 using Diplom.Data.Exeption;
 using Diplom.Data.Business.BusinessProcess;
+using Diplom.Data.Utilities;
 
 namespace Diplom.Data.Business.Model
 {
@@ -16,7 +17,6 @@ namespace Diplom.Data.Business.Model
         /// Стартовый капитал
         /// </summary>
         private double startCapital = 0;
-
         private double maxIncome = 0;
         private double minIncome = 0;
         private double maxPayment = 0;
@@ -68,11 +68,21 @@ namespace Diplom.Data.Business.Model
 
         public override void doStep()
         {
-            AbstractBusinessEvent evt = eventMap.Values.First();
+            Double key = eventMap.Keys.First();
+            AbstractBusinessEvent evt = eventMap[key];
+            eventMap.Remove(key);
             if (evt.GetType() == typeof(FinanceEvent))
                 financeEvent((FinanceEvent)evt);
-            else
-                return;
+            ///  else if (evt.GetType() == typeof(SomeEvent))
+            ///  someEvent((SomeEvent)evt) итд
+        }
+
+        private void financeEvent(FinanceEvent evt)
+        {
+            capital += evt.getAmount();
+            currentTime += evt.getTime();
+            Console.WriteLine(capital);
+            Console.Write("   " + evt.getAmount());
 
             if (capital < 0)
             {
@@ -80,21 +90,13 @@ namespace Diplom.Data.Business.Model
                 if (currentModelCicle > countOfModelCicle)
                     stopRun();
             }
+
             else
             {
                 AbstractBusinessEvent newEvent = evt.getBusinessProcess().nextBusinessEvent();
                 eventMap.Add(newEvent.getTime() + currentTime, newEvent);
                 capitalHistory.Add(capital);
             }
-        }
-
-        private void financeEvent(FinanceEvent evt)
-        {
-            eventMap.Remove(evt);
-            capital += evt.getAmount();
-            currentTime += evt.getTime();
-            Console.WriteLine(capital);
-            Console.Write("   " + evt.getAmount());
         }
 
         public override void finish()

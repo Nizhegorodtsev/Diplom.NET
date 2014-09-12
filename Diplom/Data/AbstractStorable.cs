@@ -19,11 +19,6 @@ namespace Diplom.Data
         public static readonly String NAME = "Name";
 
         /// <summary>
-        /// Этому ключу соответствует путь к директории, в которой хранится класс объекта
-        /// </summary>
-        public static readonly String TYPE = "Type";
-
-        /// <summary>
         ///Восстановление состояния объекта, которое было сохранено в JSON. Этот метод предполагает исключительно инициализацию полей,
         ///информация которых была сохранена в JSON. Все дальнейшие мероприятия по инициализации объекта должны быть реализованы в
         /// методе init()
@@ -70,7 +65,6 @@ namespace Diplom.Data
         /// </summary>
         public abstract void init();
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -83,19 +77,7 @@ namespace Diplom.Data
         protected String getClassName()
         {
             String className = GetType().Name;
-            //  className = className.substring(className.lastIndexOf("."));
             return GetType().Name;
-        }
-
-        /// <summary>
-        /// Получить директорию, в которой расположен класс объекта
-        /// </summary>
-        /// <returns></returns>
-        protected String getDirectory()
-        {
-            String directory = this.GetType().AssemblyQualifiedName;
-            //   directory = directory.substring(0, directory.lastIndexOf("."));
-            return directory;
         }
     }
 }
