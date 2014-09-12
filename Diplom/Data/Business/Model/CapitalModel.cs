@@ -7,6 +7,7 @@ using System.Collections;
 using Newtonsoft.Json.Linq;
 using Diplom.Data.Exeption;
 using Diplom.Data.Business.BusinessProcess;
+using Diplom.Data.Utilities;
 
 namespace Diplom.Data.Business.Model
 {
