@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Diplom.Data.Process
 {
+    /// <summary>
+    /// МАР поток
+    /// </summary>
     class MAP : MMPP
     {
         private double[][] changeStateEventMatrix;

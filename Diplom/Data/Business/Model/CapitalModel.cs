@@ -77,6 +77,10 @@ namespace Diplom.Data.Business.Model
             ///  someEvent((SomeEvent)evt) итд
         }
 
+        /// <summary>
+        /// Обработка финансового события
+        /// </summary>
+        /// <param name="evt"></param>
         private void financeEvent(FinanceEvent evt)
         {
             capital += evt.getAmount();
@@ -85,11 +89,7 @@ namespace Diplom.Data.Business.Model
             Console.Write("   " + evt.getAmount());
 
             if (capital < 0)
-            {
-                currentModelCicle++;
-                if (currentModelCicle > countOfModelCicle)
-                    stopRun();
-            }
+                stopRun();
 
             else
             {
@@ -97,6 +97,11 @@ namespace Diplom.Data.Business.Model
                 eventMap.Add(newEvent.getTime() + currentTime, newEvent);
                 capitalHistory.Add(capital);
             }
+        }
+
+        public override void restart()
+        {
+            capital = startCapital;
         }
 
         public override void finish()

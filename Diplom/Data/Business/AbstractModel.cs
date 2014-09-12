@@ -9,11 +9,9 @@ namespace Diplom.Data.Business
 {
     abstract class AbstractModel : AbstractStorable
     {
-        protected bool run = false;
+        protected bool continueRun = false;
 
         protected int countOfModelCicle = 0;
-
-        protected int currentModelCicle = 0;
 
         protected double currentTime = 0;
 
@@ -28,18 +26,29 @@ namespace Diplom.Data.Business
         /// </summary>
         public void startRun()
         {
-            run = true;
-            while (run)
-                doStep();
+            while (countOfModelCicle > 0)
+            {
+                continueRun = true;
+                while (continueRun)
+                    doStep();
+                restart();
+                countOfModelCicle--;
+            }
+
             finish();
         }
+
+        /// <summary>
+        /// Запустить еще один цикл моделирования
+        /// </summary>
+        public abstract void restart();
 
         /// <summary>
         /// Остановка процесса моделирования
         /// </summary>
         public void stopRun()
         {
-            run = false;
+            continueRun = false;
         }
 
         /// <summary>
