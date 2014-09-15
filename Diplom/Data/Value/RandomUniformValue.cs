@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Diplom.Data.Exeption;
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
     /// <summary>
     /// Равномерно распределенная случайная величина
     /// </summary>
-    class RandomUniformValue : AbstractRandomValue
+    class RandomUniformValue : AbstractValue
     {
         private RandomBasicValue brv;
 

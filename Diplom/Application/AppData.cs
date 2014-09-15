@@ -1,6 +1,6 @@
 ﻿using Diplom.Data.Business;
 using Diplom.Data.Process;
-using Diplom.Data.Random;
+using Diplom.Data.Value;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace Diplom.Data
         {
             MyClassLoader.loadChildClasses(typeof(AbstractModel));
             MyClassLoader.loadChildClasses(typeof(AbstractProcess));
-            MyClassLoader.loadChildClasses(typeof(AbstractRandomValue));
+            MyClassLoader.loadChildClasses(typeof(AbstractValue));
             MyClassLoader.loadChildClasses(typeof(AbstractBusinessProcess));
         }
 

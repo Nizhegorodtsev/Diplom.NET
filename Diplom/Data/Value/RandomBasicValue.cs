@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
     /// <summary>
     /// Базовая случайная величина, распределенная на интервале [0, 1]
     /// </summary>
-    class RandomBasicValue : AbstractRandomValue
+    class RandomBasicValue : AbstractValue
     {
         private System.Random random;
 

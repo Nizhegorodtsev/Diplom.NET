@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
-    class RandomBetaValue : AbstractRandomValue
+    class RandomBetaValue : AbstractValue
     {
         private double alpha;
 
