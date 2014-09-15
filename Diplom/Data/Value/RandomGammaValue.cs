@@ -7,9 +7,9 @@ using Newtonsoft.Json.Linq;
 using Diplom.Data.Utilities;
 using Diplom.Data.Exeption;
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
-    class RandomGammaValue : AbstractRandomValue
+    class RandomGammaValue : AbstractValue
     {
         private double param;
 

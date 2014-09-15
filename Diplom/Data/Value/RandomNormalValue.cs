@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Diplom.Data.Exeption;
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
     /// <summary>
     /// Нормально распределенная случайная величина с параметрами "альфа" и "сигма"
     /// </summary>
-    class RandomNormalValue : AbstractRandomValue
+    class RandomNormalValue : AbstractValue
     {
 
 

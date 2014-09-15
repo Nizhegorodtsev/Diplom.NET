@@ -7,12 +7,12 @@ using Newtonsoft.Json.Linq;
 using Diplom.Data.Exeption;
 using Diplom.Data.Utilities;
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
     /// <summary>
     /// Экспоненциально распределенная случайная величина с параметром "лямбда"
     /// </summary>
-    class RandomExponentialValue : AbstractRandomValue
+    class RandomExponentialValue : AbstractValue
     {
         private double lambda = 1;
 

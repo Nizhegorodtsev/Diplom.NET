@@ -1,5 +1,5 @@
 ﻿using Diplom.Data.Process;
-using Diplom.Data.Random;
+using Diplom.Data.Value;
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
@@ -13,7 +13,7 @@ namespace Diplom.Data.Business.BusinessProcess
     {
         private AbstractProcess eventTimeGenerator = null;
 
-        private AbstractRandomValue amountGenerator = null;
+        private AbstractValue amountGenerator = null;
 
         private bool income = true;
 
@@ -37,7 +37,7 @@ namespace Diplom.Data.Business.BusinessProcess
             base.restore(state);
             income = (bool)state.GetValue(INCOME);
             eventTimeGenerator = (AbstractProcess)AbstractStorable.newInstance((JObject)state.GetValue(PROCESS));
-            amountGenerator = (AbstractRandomValue)AbstractStorable.newInstance((JObject)state.GetValue(AMOUNT));
+            amountGenerator = (AbstractValue)AbstractStorable.newInstance((JObject)state.GetValue(AMOUNT));
         }
 
         public override JObject store()

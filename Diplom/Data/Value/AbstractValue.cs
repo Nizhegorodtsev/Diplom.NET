@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Diplom.Data.Random
+namespace Diplom.Data.Value
 {
     /// <summary>
     /// Абстракция случайной величины, распределенной по некоторому закону
     /// </summary>
-    abstract class AbstractRandomValue : AbstractStorable
+    abstract class AbstractValue : AbstractStorable
     {
         /// <summary>
         /// Получить значение случайной величины

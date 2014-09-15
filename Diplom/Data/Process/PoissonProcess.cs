@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Diplom.Data.Random;
+using Diplom.Data.Value;
 using Diplom.Data.Process;
 using System.Threading.Tasks;
 using Diplom.Data.Exeption;
